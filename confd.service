@@ -2,7 +2,7 @@
 
 export ETCD_PORT=${ETCD_PORT:-4001}
 export ETCD_HOST=${ETCD_HOST:-172.17.42.1}
-export CONFIG=${CONFIG:-$(ls -1 /etc/confd/conf.d/|head -1)}
+export CONFIG=${CONFIG:-$(ls -d1 /etc/confd/conf.d/*|head -1)}
 export ETCD=$ETCD_HOST:$ETCD_PORT
 
 # Loop until confd has updated the nginx config
